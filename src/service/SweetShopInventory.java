@@ -23,6 +23,11 @@ public class SweetShopInventory {
 		return sweets.remove(id) !=null;
 	}
 	
+	 // Get a sweet by ID
+    public Sweet getSweetById(int id) {
+        return sweets.get(id);
+    }
+	
 	//Search sweets by name
 	public List<Sweet> searchByName(String name){
 		List<Sweet> result= new ArrayList<>();

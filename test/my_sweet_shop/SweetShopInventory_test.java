@@ -39,11 +39,13 @@ public class SweetShopInventory_test {
 	    public void testPurchaseAndRestock() {
 	        Sweet s = new Sweet(3, "Barfi", "Nut-Based", 25.0, 10);
 	        manager.addSweet(s);
-	        assertTrue(manager.purchaseSweet(3, 5)); 
-	        assertEquals(5, s.getQuantity()); // 5 remaining
+	        assertTrue(manager.purchaseSweet(3, 5));
+	        Sweet purchased = manager.getAllSweets().get(0); 
+	        assertEquals(5, purchased.getQuantity());
 
-	        assertTrue(manager.restockSweet(3, 10)); 
-	        assertEquals(15, s.getQuantity()); // total 15
+	        assertTrue(manager.restockSweet(3, 10));
+	        Sweet restocked = manager.getAllSweets().get(0); 
+	        assertEquals(15, restocked.getQuantity());
 	    }
 	}
 	
