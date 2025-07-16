@@ -39,13 +39,20 @@ public class SweetShopInventory_test {
 	    public void testPurchaseAndRestock() {
 	        Sweet s = new Sweet(3, "Barfi", "Nut-Based", 25.0, 10);
 	        manager.addSweet(s);
-	        assertTrue(manager.purchaseSweet(3, 5));
-	        Sweet purchased = manager.getAllSweets().get(0); 
-	        assertEquals(5, purchased.getQuantity());
+	        
+	        boolean purchased = manager.purchaseSweet(3, 5);
+	        assertTrue(purchased);
 
-	        assertTrue(manager.restockSweet(3, 10));
-	        Sweet restocked = manager.getAllSweets().get(0); 
-	        assertEquals(15, restocked.getQuantity());
+	        Sweet afterPurchase = manager.getSweetById(3);
+	        System.out.println("After purchase quantity: " + afterPurchase.getQuantity());
+	        assertEquals(5, afterPurchase.getQuantity());
+	        
+	        boolean restocked = manager.restockSweet(3, 10);
+	        assertTrue(restocked);
+
+	        Sweet afterRestock = manager.getSweetById(3);
+	        System.out.println("After restock quantity: " + afterRestock.getQuantity());
+	        assertEquals(15, afterRestock.getQuantity());
 	    }
 	}
 	

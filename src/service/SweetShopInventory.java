@@ -70,9 +70,9 @@ public class SweetShopInventory {
 		
 		//purchase Sweets and decrease quantity
 	 public boolean purchaseSweet(int id ,int quantity) {
-		 Sweet s=sweets.get(id);
-		 if(s == null) return false;
-		 s.setQuantity(s.getQuantity()+ quantity);
+		 Sweet s = sweets.get(id);
+		 if(s == null || s.getQuantity() < quantity) return false;
+		 s.setQuantity(s.getQuantity() - quantity);
 		 return true;
 	 }
 	 
