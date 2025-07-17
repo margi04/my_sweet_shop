@@ -136,7 +136,8 @@ public class SweetShopUserInterface {
 
 	    // Helper method to format sweet details
 	    private static String format(Sweet s) {
-	        return s.getId() + " | " + s.getName() + " | " + s.getCategory() + " | ₹" + s.getPrice() + " | Qty: " + s.getQuantity();
+	        return s.getId() + " | " + s.getName() + " | " + s.getCategory() + " | ₹" + s.getPrice() + " | Qty: " + s.getQuantity()+ "\n";
+	        
 	    }
 	}
 
